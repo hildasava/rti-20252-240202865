@@ -81,11 +81,14 @@ Tanggal          : 6 April 2026
 Pilih satu paper riset di bidang TI yang mengklaim "metode X meningkatkan performa." Telusuri setiap tahap Research Trust Model.
 
 **Paper yang dipilih:**
-> Judul: Sistem Pelaporan Kerusakan Sarana Prasarana Berbasis Mobile Secara Realtime dengan Notifikasi
-> Penulis (Tahun): Rangga Eka Kusuma Dani & Aris Haris Rismayana (2024)
+> Judul:
+ Sistem Pelaporan Kerusakan Sarana Prasarana Berbasis Mobile Secara Realtime dengan Notifikasi
+> Penulis (Tahun): 
+Rangga Eka Kusuma Dani & Aris Haris Rismayana (2024)
+
 | Tahap | Apa yang Dilakukan | Potensi Distorsi |
 |-------|-------------------|-----------------|
-| Reality → Data | Wawancara dan observasi masalah sarpras di SMAN 17 Bandung.|Sampling      Bias: Hanya mengambil data dari satu sekolah saja.
+| Reality → Data | Wawancara dan observasi masalah sarpras di SMAN 17 Bandung.|Sampling      Bias: Hanya mengambil data dari satu sekolah saja.|
 | Data → Processing |Merancang database MySQL dan alur notifikasi Firebase. | Construct Validity: Menganggap "Notifikasi Cepat" otomatis berarti "Perbaikan Cepat".|
 | Processing → Analysis | Pengujian fungsionalitas fitur aplikasi dengan Black Box Testing.| Confirmation Bias: Hanya menguji apakah fitur "jalan", bukan ketahanan sistem.|
 | Analysis → Inference |Menyimpulkan sistem efisien karena notifikasi berhasil terkirim. | Inference Distortion: Tidak ada data perbandingan waktu perbaikan sebelum vs sesudah.|
