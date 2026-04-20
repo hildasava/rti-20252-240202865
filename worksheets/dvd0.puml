@@ -1,0 +1,39 @@
+@startuml
+' Mengatur arah diagram agar memanjang ke samping (rapi)
+left to right direction
+
+title DFD Level 0 - Sistem Informasi Klinik Sehat Bahagia
+
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+' Definisi Aktor (Entitas Eksternal)
+actor Pasien
+actor Dokter
+actor Apoteker
+actor Kasir
+actor Manajemen
+
+' Definisi Sistem (Proses Tunggal)
+rectangle "0. SISTEM INFORMASI\nKLINIK SEHAT BAHAGIA" as SI #LightYellow
+
+' --- Aliran Data Pasien ---
+Pasien ---> SI : Data Diri & Keluhan
+SI ---> Pasien : Nomor Antrean & Kwitansi
+
+' --- Aliran Data Dokter ---
+SI ---> Dokter : Informasi Pasien
+Dokter ---> SI : Diagnosa & E-Resep
+
+' --- Aliran Data Apoteker ---
+SI ---> Apoteker : Data Resep Digital
+Apoteker ---> SI : Konfirmasi Stok & Obat
+
+' --- Aliran Data Kasir ---
+SI ---> Kasir : Rincian Total Tagihan
+Kasir ---> SI : Input Status Lunas
+
+' --- Aliran Data Manajemen ---
+SI ---> Manajemen : Laporan Pendapatan & Kunjungan
+
+@enduml

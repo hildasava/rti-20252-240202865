@@ -64,38 +64,32 @@ Jika rantai ini tidak lengkap, RQ belum mature. Bi-directional: RQ yang tidak bi
 
 ## Template A.4 — RQ-Contribution-Hypothesis
 
-```
-RQ-CONTRIBUTION-HYPOTHESIS
+### RQ-CONTRIBUTION-HYPOTHESIS
 
-Gap Statement  : ____________________
+**Gap Statement:** Penelitian terdahulu (oleh Ade Astian, Afina G., dkk) lebih fokus pada persepsi psikologis konsumen, namun belum ada pengukuran efisiensi teknis (detik/klik) pada antarmuka Live Streaming TikTok Shop yang memiliki kepadatan informasi tinggi (*visual clutter*) dibandingkan fitur belanja standar.
 
-Research Question:
-  Tipe         : [ ] Comparison  [ ] Improvement  [ ] Exploratory
-  Formulasi    : ____________________
-  Variabel IV  : ____________________
-  Variabel DV  : ____________________
-  Metrik       : ____________________
-  Dataset      : ____________________
-  Baseline     : ____________________
+**Research Question:** * **Tipe:** [X] Comparison  [ ] Improvement  [ ] Exploratory
+* **Formulasi:** Apakah terdapat perbedaan signifikan pada efisiensi waktu transaksi (*Time-on-Task*) antara penggunaan fitur Live Streaming dengan fitur TikTok Shop Tab konvensional pada pengguna Gen-Z?
+* **Variabel IV:** Jenis Antarmuka Fitur (Live Streaming vs TikTok Shop Tab).
+* **Variabel DV:** Efisiensi Teknis (*Time-on-Task*).
+* **Metrik:** Durasi penyelesaian transaksi (dalam satuan detik).
+* **Dataset:** Data primer hasil observasi eksperimen terhadap 30 responden mahasiswa (Gen-Z).
+* **Baseline:** Fitur navigasi TikTok Shop Tab (Non-Live).
 
-Quality Check RQ:
-  [ ] Variabel spesifik
-  [ ] Metrik jelas
-  [ ] Baseline ada
-  [ ] Konteks disebutkan
-  [ ] Memerlukan eksperimen (bukan hanya survei literatur)
+**Quality Check RQ:** * [X] Variabel spesifik
+* [X] Metrik jelas
+* [X] Baseline ada
+* [X] Konteks disebutkan
+* [X] Memerlukan eksperimen (bukan hanya survei literatur)
 
-Contribution Statement:
-  Apa yang baru diketahui : ____________________
-  Jenis kontribusi        : [ ] Improvement  [ ] Comparison  [ ] Novel approach
-  Gap yang diisi          : ____________________
+**Contribution Statement:** * **Apa yang baru diketahui:** Perbandingan performa teknis dan tingkat efisiensi antarmuka pada fitur *social commerce* yang memiliki gangguan visual (*clutter*) dibandingkan dengan antarmuka belanja standar.
+* **Jenis kontribusi:** [ ] Improvement  [X] Comparison  [ ] Novel approach
+* **Gap yang diisi:** *Method Gap* (pengukuran objektif) dan *Context Gap* (kondisi *visual clutter* pada fitur Live).
 
-Hypothesis Pair:
-  H₀ : ____________________
-  H₁ : ____________________
-  Threshold              : ____________________
-  Justifikasi threshold  : ____________________
-```
+**Hypothesis Pair:** * **H₀:** Tidak ada perbedaan signifikan pada rata-rata waktu transaksi antara fitur Live Streaming dan fitur belanja biasa.
+* **H₁:** Fitur Live Streaming memiliki waktu transaksi yang lebih lama (kurang efisien) secara signifikan dibandingkan fitur belanja biasa akibat hambatan navigasi visual.
+* **Threshold:** p-value < 0.05.
+* **Justifikasi threshold:** Merupakan standar tingkat signifikansi (Alpha 5%) dalam pengujian statistik untuk menolak hipotesis nol pada riset interaksi manusia-komputer.
 
 ---
 
@@ -103,24 +97,24 @@ Hypothesis Pair:
 
 Gunakan gap yang ditemukan di WS-03. Transformasikan menjadi Research Question.
 
-**Gap dari WS-03:** ____________________________________
+**Gap dari WS-03:** Kurangnya pengukuran metrik efisiensi teknis (HCI) pada fitur Live Streaming TikTok Shop yang memiliki kepadatan informasi tinggi (*visual clutter*).
 
 **RQ versi pertama (tulis bebas):**
-> ___________________________________________________
+> Apakah proses belanja lewat Live Streaming di TikTok lebih tidak efisien dibandingkan lewat menu belanja biasa karena layarnya terlalu penuh informasi?
 
 **Evaluasi RQ:**
 
 | Komponen | Ada? | Isi |
 |----------|------|-----|
-| Metode spesifik | *Contoh: Ya — CNN vs RF* | |
-| Metrik terukur | | |
-| Baseline | | |
-| Dataset/konteks | | |
+| Metode spesifik | Ya | Perbandingan fitur Live vs Non-Live |
+| Metrik terukur | Ya | Efisiensi teknis (*Time-on-Task*) |
+| Baseline | Ya | Fitur TikTok Shop Tab konvensional |
+| Dataset/konteks | Ya | Pengguna Gen-Z di Indonesia |
 
-**Tipe RQ:** [ ] Comparison / [ ] Improvement / [ ] Exploratory
+**Tipe RQ:** [X] Comparison / [ ] Improvement / [ ] Exploratory
 
 **RQ versi revisi (setelah evaluasi):**
-> ___________________________________________________
+> "Bagaimana perbandingan efisiensi waktu transaksi (*Time-on-Task*) pada antarmuka Live Streaming TikTok Shop dibandingkan dengan fitur TikTok Shop Tab konvensional bagi pengguna Gen-Z?"
 
 ---
 
@@ -130,14 +124,14 @@ Rumuskan pasangan hipotesis dari RQ di Latihan 1.
 
 | Komponen | Isi |
 |----------|-----|
-| H₀ | *Contoh: Tidak ada perbedaan signifikan F1-Score antara CNN dan RF pada dataset CIC-MalMem-2022* |
-| H₁ | |
-| Metrik | |
-| Threshold | |
-| Justifikasi threshold | |
+| **H₀** | Tidak ada perbedaan efisiensi waktu transaksi (*Time-on-Task*) yang signifikan antara penggunaan fitur Live Streaming dan fitur TikTok Shop Tab. |
+| **H₁** | Fitur Live Streaming memiliki durasi transaksi yang lebih lama secara signifikan dibandingkan fitur TikTok Shop Tab akibat adanya *visual clutter*. |
+| **Metrik** | *Time-on-Task* (detik) dan *Number of Clicks* (jumlah klik). |
+| **Threshold** | *p-value* < 0.05. |
+| **Justifikasi threshold** | Merupakan standar tingkat signifikansi (Alpha 5%) yang umum digunakan dalam riset perilaku dan interaksi manusia-komputer untuk menolak hipotesis nol. |
 
-**Apakah hipotesis ini falsifiable?** [ ] Ya / [ ] Tidak
-> Bagaimana cara membuktikannya salah? ___________________
+**Apakah hipotesis ini falsifiable?** [X] Ya / [ ] Tidak
+> **Bagaimana cara membuktikannya salah?** Hipotesis ini terbukti salah jika setelah dilakukan uji statistik (misalnya *Independent Samples T-Test*), nilai signifikansi (*p-value*) lebih besar dari 0.05, yang berarti tidak ada perbedaan performa yang nyata di antara kedua fitur tersebut.
 
 ---
 
@@ -147,15 +141,15 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 | Tahap | Isi |
 |-------|-----|
-| RQ | *Contoh: Apakah CNN menghasilkan F1-Score lebih tinggi dari RF...* |
-| Variable (IV) | *Contoh: Jenis algoritma (CNN vs RF)* |
-| Variable (DV) | |
-| Metric | |
-| Data source | |
-| Analysis method | |
+| **RQ** | Apakah fitur Live Streaming lebih tidak efisien (waktu lebih lama) dibandingkan fitur TikTok Shop Tab konvensional? |
+| **Variable (IV)** | Mode Antarmuka Belanja (Live Streaming vs TikTok Shop Tab). |
+| **Variable (DV)** | Efisiensi Pengguna (*User Efficiency*). |
+| **Metric** | *Completion Time* (detik) dan *Number of Clicks* (frekuensi klik). |
+| **Data source** | Data primer melalui **Rekam Layar (Screen Recording)** saat responden melakukan tugas belanja (*Task Scenario*) untuk dianalisis kembali durasi dan jumlah kliknya. |
+| **Analysis method** | *Independent Samples T-Test* (membandingkan rata-rata efisiensi antara dua mode antarmuka). |
 
-**Apakah rantai lengkap?** [ ] Ya / [ ] Tidak
-> Jika tidak, tahap mana yang perlu direvisi? ______________
+**Apakah rantai lengkap?** [X] Ya / [ ] Tidak
+> **Jika tidak, tahap mana yang perlu direvisi?** Rantai sudah lengkap dan sinkron; penggunaan rekam layar menjamin data metrik (detik dan klik) menjadi sangat objektif dan akurat.
 
 ---
 
@@ -163,6 +157,8 @@ Lengkapi rantai dari RQ hingga metode analisis.
 
 > Ambil satu judul skripsi/paper yang pernah dibaca. Coba ekstrak RQ-nya. Apakah RQ tersebut memenuhi semua komponen (metode, metrik, baseline, konteks)? Jika tidak, apa yang hilang?
 
-**Judul:** _____________________________________________
-**RQ yang diekstrak:** __________________________________
-**Komponen yang hilang:** _______________________________
+**Judul:** Analisis User Experience Terhadap Purchase Intention Di Tiktok Shop (Tinezia Hairunisya, 2025).
+
+**RQ yang diekstrak:** Apakah variabel User Experience (UX) memiliki pengaruh yang signifikan terhadap Niat Beli (*Purchase Intention*) pengguna pada platform TikTok Shop?
+
+**Komponen yang hilang:** RQ tersebut sudah memiliki konteks (TikTok Shop) dan subjek yang jelas, namun masih **kehilangan komponen metode spesifik dan metrik teknis**. Pertanyaannya masih bersifat umum (eksploratif) dan tidak menyebutkan secara eksplisit **metrik objektif** (seperti durasi waktu atau jumlah klik) serta tidak menyertakan **baseline** (perbandingan dengan antarmuka lain) sebagai standar pengukuran efisiensi.
