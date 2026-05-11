@@ -110,6 +110,7 @@ Evaluasi metrik DV (**Time-on-Task**) yang dipilih di Latihan 1 menggunakan 3 kr
 
 ## Latihan 3 — Data Quality Check
 
+
 | Dimensi | Pertanyaan | Jawaban | Strategi Mitigasi |
 |---------|-----------|---------|------------------|
 | **Completeness** | Apakah semua data point terkumpul? | Ya, data dianggap lengkap jika 30 video rekaman tersimpan tanpa korupsi file. | Melakukan verifikasi file dan backup cloud segera setelah sesi eksperimen berakhir. |

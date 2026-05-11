@@ -64,47 +64,44 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 
 ## Template A.6 — Mapping RQ ke Arsitektur Sistem
 
-```
-SYSTEM-EXPERIMENT MAPPING
+### SYSTEM-EXPERIMENT MAPPING
 
-Research Question: ____________________
+**Research Question:**
+Bagaimana efisiensi antarmuka fitur Live Streaming TikTok Shop diukur menggunakan metode observasi langsung dengan metrik Time-on-Task dan Number of Clicks terhadap dataset pengguna Generasi Z, untuk dibandingkan dengan baseline analisis User Experience (UX) dari Tinezia Hairunisya (2025)?
 
-Variable → Component Mapping:
+**Variable → Component Mapping:**
+
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi/Pengukuran |
 |----------|------|-----------------|---------------------------|
-|          | IV   |                 |                           |
-|          | DV   |                 |                           |
-|          | CV   |                 |                           |
+| Desain Antarmuka (*Visual Clutter*) | **IV** | Interface Overlay Module | Mengatur level kemunculan stiker, gift, dan komentar (Low vs High Clutter). |
+| Efisiensi Transaksi | **DV** | Activity Tracker & Logger | Pencatatan otomatis waktu checkout (detik) dan jumlah klik (count) secara real-time. |
+| Profil Pengguna & Lingkungan | **CV** | Screening & Config Module | Mengunci kriteria responden (Gen Z saja) dan standarisasi perangkat/jaringan internet. |
 
-4 Prinsip Desain:
-  [ ] Traceability — Setiap komponen bisa ditelusuri ke variabel
-  [ ] Variable Isolation — IV bisa diubah tanpa mengubah CV
-  [ ] Measurement Integration — Pengukuran DV built-in
-  [ ] Reproducibility — Setup bisa direkonstruksi
+**4 Prinsip Desain:**
+- [x] **Traceability** — Setiap komponen visual (overlay) berhubungan langsung dengan variabel bebas (IV).
+- [x] **Variable Isolation** — Kita bisa mematikan/menyalakan fitur "stiker" tanpa mengubah alur navigasi utama "keranjang kuning".
+- [x] **Measurement Integration** — Pengukuran waktu dan klik sudah tertanam dalam protokol observasi (built-in logging).
+- [x] **Reproducibility** — Skenario tugas (task scenario) yang sama diberikan kepada setiap responden untuk hasil yang konsisten.
 
-Experimental Setup:
-  Input data     : ____________________
-  Parameter      : ____________________
-  Output format  : ____________________
-```
+**Experimental Setup:**
+- **Input data:** Skenario simulasi belanja saat Live Streaming berlangsung.
+- **Parameter:** Tingkat kepadatan elemen visual (stiker/gift per menit) dan durasi sesi.
+- **Output format:** Log file (.csv atau .xlsx) berisi daftar responden, jumlah klik, dan total waktu penyelesaian tugas (Time-on-Task).
 
 ---
 
 ## Latihan 1 — Variable-to-Component Mapping
 
-Gunakan RQ dan variabel dari WS-05. Petakan ke komponen sistem.
-
-**RQ:** __________________________________________________
+**RQ:** Bagaimana efisiensi antarmuka fitur Live Streaming TikTok Shop diukur menggunakan metode observasi langsung dengan metrik Time-on-Task dan Number of Clicks terhadap dataset pengguna Generasi Z, untuk dibandingkan dengan baseline analisis User Experience (UX) dari Tinezia Hairunisya (2025)?
 
 | Variabel | Tipe | Komponen Sistem | Cara Manipulasi / Pengukuran |
 |----------|------|-----------------|---------------------------|
-| *Contoh: Jenis model* | *IV* | *Modul classifier (swap RF ↔ CNN)* | *Ganti config `model_type`* |
-| | DV | | |
-| | CV | | |
+| Tingkat Kepadatan Informasi (*Visual Clutter*) | **IV** | Interface Overlay Module | Mengubah intensitas tampilan stiker/gift via simulator atau rekaman sesi. |
+| Efisiensi Transaksi (Waktu & Klik) | **DV** | Interaction Logger & Timer | Pencatatan otomatis timestamp awal-akhir dan counter jumlah klik pada tombol checkout. |
+| Profil Responden & Device | **CV** | User Screening Database | Memfilter partisipan melalui kuesioner kriteria (Gen Z) dan menyamakan spek device pengujian. |
 
-**Apakah semua variabel bisa di-map?** [ ] Ya / [ ] Tidak
-> Jika tidak, komponen apa yang perlu ditambahkan? _________
-
+**Apakah semua variabel bisa di-map?** [x] Ya / [ ] Tidak
+> **Jika tidak, komponen apa yang perlu ditambahkan?** (Sudah terpetakan semua ke dalam komponen observasi dan logging sistem).
 ---
 
 ## Latihan 2 — 4 Prinsip Desain
@@ -113,38 +110,40 @@ Evaluasi desain sistem terhadap 4 prinsip.
 
 | Prinsip | Status | Bukti / Penjelasan |
 |---------|--------|-------------------|
-| Traceability | *Contoh: ✅ — setiap modul punya label variabel* | |
-| Modularity | | |
-| Controllability | | |
-| Measurability | | |
+| **Traceability** | ✅ Terpenuhi | Setiap elemen UI (keranjang, stiker, tombol bayar) dilacak langsung pengaruhnya terhadap jumlah tap yang dilakukan user. |
+| **Modularity** | ✅ Terpenuhi | Skenario pengujian dipisah antara layar yang "bersih" dan layar yang "ramai" (*visual clutter*) tanpa mengubah alur transaksi utama. |
+| **Controllability** | ✅ Terpenuhi | Variabel kontrol dikunci pada responden Gen Z dan penggunaan aplikasi TikTok versi yang sama untuk meminimalkan gangguan teknis. |
+| **Measurability** | ✅ Terpenuhi | Data bersifat kuantitatif dan objektif karena diukur langsung menggunakan satuan detik (timer) dan jumlah ketukan layar (counter). |
 
-**Prinsip mana yang paling sulit dipenuhi?** _______________
+**Prinsip mana yang paling sulit dipenuhi?** *Modularity (Isolasi Variabel).*
+
 **Strategi untuk mengatasinya:**
-> ___________________________________________________
-
+Menggunakan simulasi rekaman layar *Live Streaming* yang sudah diatur tingkat keramaian elemen visualnya, sehingga setiap responden mendapatkan beban gangguan yang sama persis saat dihitung waktunya.
 ---
 
 ## Latihan 3 — Ablation Study Planning
 
 Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 
-| Kondisi | Komponen A | Komponen B | Komponen C | Hasil yang Diharapkan |
+| Kondisi | Komponen A (Overlay Stiker/Gift) | Komponen B (Komentar Real-time) | Komponen C (Banner Promo) | Hasil yang Diharapkan |
 |---------|-----------|-----------|-----------|----------------------|
-| Full | *Contoh: ✅ CNN* | *Contoh: ✅ Temporal features* | *Contoh: ✅ Z-score norm* | *Baseline penuh* |
-| – A | ❌ (ganti RF) | ✅ | ✅ | |
-| – B | ✅ | ❌ (tanpa temporal) | ✅ | |
-| – C | ✅ | ✅ | ❌ (tanpa normalisasi) | |
+| **Full** | ✅ Aktif | ✅ Aktif | ✅ Aktif | *Baseline*: Efisiensi terendah (Waktu terlama & jumlah tap terbanyak). |
+| **– A** | ❌ Dinonaktifkan | ✅ Aktif | ✅ Aktif | Kecepatan transaksi meningkat karena area tombol "Beli" tidak tertutup. |
+| **– B** | ✅ Aktif | ❌ Dinonaktifkan | ✅ Aktif | Gangguan visual berkurang, fokus user pada produk lebih stabil. |
+| **– C** | ✅ Aktif | ✅ Aktif | ❌ Dinonaktifkan | Navigasi lebih bersih, risiko salah klik (misclick) menurun. |
 
-**Komponen mana yang diprediksi paling berkontribusi?** _____
+**Komponen mana yang diprediksi paling berkontribusi?** Komponen A (Overlay Stiker/Gift).
+
 **Mengapa?**
-> ___________________________________________________
-
+> Karena komponen ini bersifat *pop-up* yang muncul secara tiba-tiba dan seringkali menutupi elemen navigasi utama (seperti keranjang kuning atau tombol *checkout*). Hal ini secara langsung memaksa pengguna melakukan ekstra tap untuk menutup stiker atau menunggu stiker hilang, yang secara signifikan menambah *Time-on-Task*.
 ---
 
 ## Refleksi
 
-> Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?
+> **Apa risiko jika sistem dibangun seperti produk (monolitik, fitur lengkap) lalu baru dilakukan eksperimen? Mengapa arsitektur modular penting untuk riset?**
 
 **Jawaban:**
-> ___________________________________________________
-> ___________________________________________________
+
+Risiko utama jika sistem dibangun secara **monolitik** (seperti produk jadi yang fiturnya lengkap dan menyatu) adalah munculnya **bias variabel atau *noise*** yang tinggi. Dalam riset, kita perlu tahu secara pasti fitur mana yang memengaruhi hasil. Jika sistemnya monolitik, peneliti akan sulit membedakan apakah efisiensi pengguna menurun karena desain tombol yang buruk, gangguan dari stiker, atau banyaknya komentar, karena semuanya aktif secara bersamaan. Akibatnya, kita tidak bisa menarik kesimpulan yang valid mengenai penyebab utama masalah.
+
+**Arsitektur modular** sangat penting untuk riset karena memungkinkan terjadinya **Variable Isolation (Isolasi Variabel)**. Dengan desain yang modular (terbagi per modul), peneliti bisa melakukan *Ablation Study*—yaitu mematikan atau menyalakan satu komponen saja (misalnya fitur stiker) tanpa mengganggu fungsi sistem yang lain. Hal ini memastikan bahwa perubahan pada variabel terikat (*Time-on-Task* dan *Number of Clicks*) memang benar-benar disebabkan oleh variabel bebas yang sedang diuji, sehingga data yang dihasilkan menjadi objektif, akurat, dan dapat dipertanggungjawabkan secara ilmiah.
