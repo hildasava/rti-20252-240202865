@@ -57,30 +57,29 @@ Problem (Bab 2) → Gap (Bab 3) → RQ & H (Bab 4) → Metrik (Bab 5) → Sistem
 
 ## Template A.8 — Integration Checklist
 
-```
+
 PROPOSAL INTEGRATION CHECKLIST
 
 Koneksi Vertikal (Flow Atas-Bawah):
-  [ ] Problem → Gap: masalah terdokumentasi di literatur
-  [ ] Gap → RQ: pertanyaan menjawab gap spesifik
-  [ ] RQ → Hypothesis: hipotesis memprediksi jawaban
-  [ ] Hypothesis → Metric: metrik mengukur variabel dalam hipotesis
-  [ ] Metric → System: komponen sistem menghasilkan/mengukur metrik
-  [ ] System → Experiment: desain eksperimen menggunakan sistem
+  [x] Problem → Gap: masalah terdokumentasi di literatur
+  [x] Gap → RQ: pertanyaan menjawab gap spesifik
+  [x] RQ → Hypothesis: hipotesis memprediksi jawaban
+  [x] Hypothesis → Metric: metrik mengukur variabel dalam hipotesis
+  [x] Metric → System: komponen sistem menghasilkan/mengukur metrik
+  [x] System → Experiment: desain eksperimen menggunakan sistem
 
 Koneksi Horizontal (Konsistensi):
-  [ ] Istilah sama di semua bagian
-  [ ] Variabel di RQ = variabel di hipotesis = metrik di desain
-  [ ] Scope tidak berubah dari masalah ke eksperimen
+  [x] Istilah sama di semua bagian
+  [x] Variabel di RQ = variabel di hipotesis = metrik di desain
+  [x] Scope tidak berubah dari masalah ke eksperimen
 
 Rubrik Self-Assessment:
-| Kriteria | 1 (Lemah) | 2 (Cukup) | 3 (Baik) | Skor |
-|----------|-----------|-----------|----------|------|
-| Koherensi |          |           |          |      |
-| Specificity |        |           |          |      |
-| Feasibility |        |           |          |      |
-| Rigor     |          |           |          |      |
-```
+| Kriteria    | 1 (Lemah) | 2 (Cukup) | 3 (Baik) | Skor |
+|-------------|-----------|-----------|----------|------|
+| Koherensi   |           |           |    [x]   |   3  |
+| Specificity |           |           |    [x]   |   3  |
+| Feasibility |           |           |    [x]   |   3  |
+| Rigor       |           |           |    [x]   |   3  |
 
 ---
 
@@ -90,13 +89,13 @@ Kumpulkan hasil dari WS-02 sampai WS-07 menjadi satu ringkasan proposal.
 
 | Komponen | Sumber | Isi (1-2 kalimat) |
 |----------|--------|-------------------|
-| Problem Statement | WS-02 | *Contoh: Sistem rekomendasi memiliki akurasi tinggi (RMSE 0.87) tetapi satisfaction score rendah (45/100). Gap antara metrik teknis dan kepuasan pengguna belum diteliti.* |
-| Gap | WS-03 | *Contoh: Tidak ada studi yang mengintegrasikan collaborative filtering dengan user-context signals untuk meningkatkan satisfaction.* |
-| RQ | WS-04 | *Contoh: Apakah penambahan context-aware signals pada collaborative filtering meningkatkan satisfaction score tanpa menurunkan RMSE?* |
-| Hipotesis | WS-04 | *Contoh: H₁: Sistem CF+context menghasilkan satisfaction ≥ 70/100 dengan RMSE ≤ 0.90 dibanding baseline CF murni.* |
-| Variabel & Metrik | WS-05 | *Contoh: IV = jenis sistem (CF vs CF+context); DV = satisfaction score (skala 0-100) + RMSE (regresi).* |
-| Sistem | WS-06 | |
-| Desain Eksperimen | WS-07 | |
+| Problem Statement | WS-02 | Tingginya kepadatan informasi visual (*visual clutter*) pada fitur belanja *live streaming social commerce* diduga menurunkan kenyamanan pengguna. Namun, degradasi performa interaksi fisik pengguna akibat gangguan visual tersebut belum diteliti secara objektif. |
+| Gap | WS-03 | Terdapat *Method Gap* di mana riset terdahulu mayoritas menggunakan kuesioner subjektif (seperti Hairunisya, 2025), serta *Context Gap* di mana manipulasi kepadatan elemen visual belum pernah diuji melalui metode eksperimental terkontrol. |
+| RQ | WS-04 | Apakah manipulasi tingkat kepadatan elemen visual (*Visual Clutter Overlay*) pada antarmuka *live streaming* memengaruhi efisiensi waktu transaksi (*Time-on-Task*) dan jumlah kesalahan ketukan (*Number of Clicks*) pengguna Generasi Z? |
+| Hipotesis | WS-04 | H_1: Kondisi antarmuka *Clean* menghasilkan rata-rata durasi *Time-on-Task* yang lebih cepat dan nilai *Number of Clicks* yang lebih rendah secara signifikan dibandingkan Kondisi *Full*. |
+| Variabel & Metrik | WS-05 | Independent Variable (IV) = Tingkat kepadatan elemen visual (Kondisi *Clean* vs *Full*). Dependent Variable (DV) = *Time-on-Task* (satuan detik) dan *Number of Clicks/User Error* (frekuensi salah klik). |
+| Sistem | WS-06 | Prototipe simulasi aplikasi *social commerce* dengan fitur perekam layar internal (1080p, 60fps) dan penunjuk titik sentuh (*Show Taps*) untuk mencatat interaksi fisik responden secara riil. |
+| Desain Eksperimen | WS-07 | Eksperimen laboratorium terkontrol menggunakan desain *Within-Subject (Repeated Measures)* pada 37 responden Generasi Z dengan gawai standar Samsung A23 dan menerapkan teknik *counterbalancing*. |
 
 ---
 
@@ -106,16 +105,20 @@ Verifikasi 6 koneksi kritis. Isi dengan merujuk tabel di Latihan 1.
 
 | Koneksi | Status | Bukti |
 |---------|--------|-------|
-| Problem → Gap | *Contoh: ✅ — gap muncul dari 15 paper Bab 3 yang tidak ada yang mengkombinasikan CF + context untuk satisfaction* | |
-| Gap → RQ | *Contoh: ✅ — RQ langsung menanyakan apakah CF+context meningkatkan satisfaction* | |
-| RQ → Hypothesis | *Contoh: ✅ — H₁ memprediksi satisfaction ≥ 70 dengan threshold RMSE ≤ 0.90* | |
-| Hypothesis → Metric | | |
-| Metric → System | | |
-| System → Experiment | | |
+| Problem → Gap | ✅ | Gap muncul langsung dari analisis literatur terkait tiadanya data performa objektif pada fitur *live streaming* akibat tumpukan visual clutter. |
+| Gap → RQ | ✅ | RQ secara spesifik mempertanyakan pengaruh manipulasi visual clutter terhadap efisiensi interaksi objektif pengguna Generasi Z. |
+| RQ → Hypothesis | ✅ | Hipotesis secara tegas memprediksi arah penurunan performa (*Time-on-Task* dan *Clicks*) dari kondisi *Clean* ke *Full*. |
+| Hypothesis → Metric | ✅ | Variabel dalam hipotesis diukur langsung secara numerik melalui metrik durasi detik (*Time-on-Task*) dan frekuensi (*Number of Clicks*). |
+| Metric → System | ✅ | Komponen sistem prototipe simulasi dan fitur *screen recording* (*Show Taps*) mampu mengekstraksi data metrik waktu dan klik per *frame*. |
+| System → Experiment | ✅ | Desain eksperimen menggunakan prototipe simulasi tersebut sebagai instrumen uji utama yang dioperasikan langsung oleh 37 responden di lab. |
 
-**Koneksi mana yang paling lemah?** _______________________
+**Koneksi mana yang paling lemah?** Koneksi *Metric → System* pada tahap ekstraksi data visual rekaman layar.
+
 **Bagaimana cara memperkuatnya?**
-> ___________________________________________________
+> Proses ekstraksi data dari rekaman layar perlu menggunakan lembar matriks pengamatan (*coding sheet*) baku yang divalidasi silang oleh dua pengamat (*inter-rater reliability*) untuk menghindari subjektivitas manual saat menghitung jumlah klik dan detik.
+
+**Konsistensi horizontal — apakah istilah dan scope konsisten?** [x] Ya / [ ] Tidak
+> Jika tidak, di bagian mana terjadi inkonsistensi? -
 
 **Konsistensi horizontal — apakah istilah dan scope konsisten?** [ ] Ya / [ ] Tidak
 > Jika tidak, di bagian mana terjadi inkonsistensi? _________
@@ -128,24 +131,24 @@ Evaluasi proposal mini menggunakan rubrik.
 
 | Kriteria | Skor (1-3) | Justifikasi |
 |----------|-----------|-------------|
-| Koherensi | *Contoh: 2 — koneksi gap→RQ masih lemah karena gap belum cukup narrow* | |
-| Specificity | *Contoh: 3 — metrik (satisfaction 0-100, RMSE) sudah terdefinisi numerik* | |
-| Feasibility | | |
-| Rigor | | |
+| Koherensi | 3 | Alur riset sangat lurus dan logis, sejak penentuan masalah *visual clutter* hingga pengujian statistiknya menggunakan *Paired Samples T-Test*. |
+| Specificity | 3 | Variabel, metrik (detik dan frekuensi klik), spesifikasi gawai (Samsung A23), serta jumlah sampel (37 responden Gen Z) sudah terdefinisi secara eksak. |
+| Feasibility | 3 | Aplikasi simulasi bersifat lokal di laboratorium terkontrol dan jumlah responden (37 mahasiswa) sangat realistis diselesaikan dalam target waktu yang ada. |
+| Rigor | 3 | Desain eksperimen menggunakan *Within-Subject* lengkap dengan mitigasi bias berupa *counterbalancing*, uji normalitas *Shapiro-Wilk*, serta opsi uji *Wilcoxon*. |
 
-**Skor total:** _____ / 12
+**Skor total:** 12 / 12
 
-**Apakah proposal siap untuk fase eksekusi?** [ ] Ya / [ ] Belum
-> Jika belum, apa yang perlu diperbaiki? __________________
-
+**Apakah proposal siap untuk fase eksekusi?** [x] Ya / [ ] Belum
+> Jika belum, apa yang perlu diperbaiki? -
 ---
 
 ## Refleksi
 
 > Dari seluruh proses WS-01 sampai WS-08, bagian mana yang paling mudah dan paling sulit? Mengapa? Apa yang akan dilakukan berbeda jika mengulang dari awal?
 
-**Bagian termudah:** ____________________________________
-**Bagian tersulit:** ____________________________________
+**Bagian termudah:** Menyusun Variabel dan Metrik (WS-05) karena parameter efisiensi dalam bidang Interaksi Manusia-Komputer (HCI) sudah baku dan terukur jelas, yaitu mengukur aspek waktu (*Time-on-Task*) dan tingkat kesalahan (*error rate*).
+
+**Bagian tersulit:** Mengintegrasikan Desain Eksperimen dengan Analisis Validitas (WS-07). Hal ini sulit karena memerlukan ketelitian tinggi untuk merancang mitigasi *learning effect* (melalui *counterbalancing*) agar data performa motorik yang diambil dari 37 responden tidak bias.
+
 **Yang akan dilakukan berbeda:**
-> ___________________________________________________
-> ___________________________________________________
+> Jika mengulang dari awal, saya akan melakukan studi rintis (*pilot study*) kecil dengan 2–3 responden terlebih dahulu di awal pengerjaan tugas untuk memastikan sistem perekaman *Show Taps* berjalan lancar sebelum proposal final ini disahkan.
