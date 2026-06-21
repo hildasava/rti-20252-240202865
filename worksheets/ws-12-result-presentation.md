@@ -62,60 +62,56 @@ Keduanya **saling melengkapi**:
 
 ## Template A.12 — Result Presentation Plan
 
-```
+
 RESULT PRESENTATION PLAN
 
-Research Question : ____________________
-Metrik Utama      : ____________________
+Research Question : Apakah terdapat perbedaan signifikan pada nilai Time on Task dan jumlah Klik Salah antara pengguna yang bertransaksi menggunakan antarmuka Kondisi CLEAN dibandingkan Kondisi FULL STICKER di Tiktokshop?
+Metrik Utama      : Time on Task (detik) dan Klik Salah (jumlah klik)
 
 Tabel Hasil:
-| Skenario | Metrik 1 (mean ± std) | Metrik 2 (mean ± std) | n |
-|----------|----------------------|----------------------|---|
-|          |                      |                      |   |
+| Skenario             | Time on Task (mean ± std) | Klik Salah (mean ± std)  | n   |
+|----------------------|---------------------------|---------------------------|-----|
+| Kondisi CLEAN        | 6.24 ± 1.14 detik         | 0.16 ± 0.37 klik          | 37  |
+| Kondisi FULL STICKER | 10.95 ± 1.25 detik        | 1.35 ± 0.92 klik          | 37  |
 
 Visualisasi yang Direncanakan:
-| # | Jenis Grafik | Pesan Utama | Metrik |
-|---|-------------|-------------|--------|
-| 1 |             |             |        |
-| 2 |             |             |        |
+| # | Jenis Grafik            | Pesan Utama                                                                               | Metrik       |
+|---|-------------------------|-------------------------------------------------------------------------------------------|--------------|
+| 1 | Bar Chart + Error Bar   | Menunjukkan rata-rata durasi pengerjaan Kondisi Full Sticker lebih lama dibanding Clean   | Time on Task |
+| 2 | Box Plot                | Menunjukkan sebaran distribusi data dan rentang konsistensi waktu antar kelompok          | Time on Task |
 
 Bias Check:
-  [ ] Y-axis mulai dari 0 (atau dijustifikasi)
-  [ ] Error bar/CI ditampilkan
-  [ ] Semua data disertakan (tidak cherry-picked)
-  [ ] Tidak menggunakan 3D tanpa alasan
-```
+  [✓] Y-axis mulai dari 0 (atau dijustifikasi)
+  [✓] Error bar/CI ditampilkan
+  [✓] Semua data disertakan (tidak cherry-picked)
+  [✓] Tidak menggunakan 3D tanpa alasan
 
----
 
 ## Latihan 1 — Tabel Hasil
 
 Buat tabel hasil eksperimen Anda (boleh dengan data simulasi jika belum punya data riil).
 
-| Skenario | Metrik 1 (mean ± std) | Metrik 2 (mean ± std) | n |
-|----------|----------------------|----------------------|---|
-| *Contoh: BERT-base* | *88.4 ± 1.2%* | *45.2 ± 3.1 min* | *10* |
-| | | | |
-| | | | |
+| Skenario             | Time on Task (mean ± std) | Klik Salah (mean ± std)  | n   |
+|----------------------|---------------------------|---------------------------|-----|
+| Kondisi CLEAN        | 6.24 ± 1.14 detik         | 0.16 ± 0.37 klik          | 37  |
+| Kondisi FULL STICKER | 10.95 ± 1.25 detik        | 1.35 ± 0.92 klik          | 37  |
 
-**Checklist tabel:**
-- [ ] Self-contained (judul jelas, satuan ada, N tercantum)
-- [ ] Mean ± std (bukan single number)
-- [ ] Diurutkan berdasarkan metrik utama
-- [ ] Format konsisten di semua baris
-
+Checklist tabel:
+- [✓] Self-contained (judul jelas, satuan ada, N tercantum)
+- [✓] Mean ± std (bukan single number)
+- [✓] Diurutkan berdasarkan metrik utama
+- [✓] Format konsisten di semua baris
 ---
 
 ## Latihan 2 — Rencana Visualisasi
 
 Rencanakan 2-3 grafik untuk menyajikan data dari Latihan 1. Setiap grafik = satu pesan.
 
-| # | Jenis Grafik | Pesan | Data yang Digunakan |
-|---|-------------|-------|---------------------|
-| 1 | *Contoh: Bar chart + error bar* | *Perbandingan accuracy antar 3 model* | *Mean accuracy ± std* |
-| 2 | *Box plot* | *Distribusi F1 per model* | *Semua run F1* |
-| 3 | *Scatter plot* | *Trade-off accuracy vs training time* | *Mean accuracy vs mean time* |
-
+| # | Jenis Grafik            | Pesan                                                                                     | Data yang Digunakan |
+|---|-------------------------|-------------------------------------------------------------------------------------------|---------------------|
+| 1 | Bar Chart + Error Bar   | Menampilkan visualisasi perbandingan rata-rata durasi waktu transaksi antar kedua skenario. | Mean ± Std dari Time on Task |
+| 2 | Box Plot                | Menunjukkan rentang sebaran distribusi data waktu dan membuktikan tidak adanya outlier.    | Seluruh nilai individu Time on Task |
+| 3 | Grouped Bar Chart       | Menunjukkan perbedaan jumlah kesalahan klik (Klik Salah) yang melonjak di Full Sticker.    | Mean ± Std dari Klik Salah |
 ---
 
 ## Latihan 3 — Bias Detection
@@ -126,20 +122,21 @@ Evaluasi visualisasi berikut untuk bias (skenario dari contoh):
 
 | Pertanyaan | Jawaban |
 |-----------|---------|
-| Apakah Y-axis menyesatkan? | *Contoh: Ya — A terlihat 2× B padahal beda 0.4%* |
-| Apakah error bar ditampilkan? | |
-| Apakah semua kondisi ditampilkan? | |
-| Apa solusinya? | |
+| Apakah Y-axis menyesatkan? | Ya — Sumbu Y yang dipotong mulai dari 90% mendistorsi visual, sehingga Metode A terlihat seolah 2 kali lipat lebih unggul dari Metode B padahal selisih aslinya hanya 0.4%. |
+| Apakah error bar ditampilkan? | Tidak ditampilkan pada skenario contoh, yang merupakan kesalahan karena menyembunyikan variabilitas dan ketidakpastian data asli. |
+| Apakah semua kondisi ditampilkan? | Ya, kedua kondisi (Metode A dan Metode B) sudah ditampilkan secara berdampingan. |
+| Apa solusinya? | Mengubah pengaturan sumbu Y (Y-axis) agar wajib dimulai dari angka 0% agar perbandingan tinggi bar proporsional, serta menambahkan komponen error bar (Std) pada setiap bar grafik. |
 
-**Evaluasi grafik Anda sendiri dari Latihan 2:**
-- [ ] Semua bias check lulus
-- [ ] Ada yang perlu diperbaiki: ____
-
+Evaluasi grafik Anda sendiri dari Latihan 2:
+  [✓] Semua bias check lulus
+  [ ] Ada yang perlu diperbaiki: — (Seluruh grafik rencana dipastikan memulai sumbu Y dari angka 0 dan menyertakan error bar standar).
 ---
 
 ## Refleksi
 
 > Mengapa tabel dan grafik keduanya diperlukan — tidak cukup salah satu saja? Pernahkah Anda membuat grafik yang (tanpa sengaja) menyesatkan?
 
-> ___________________________________________________
-> ___________________________________________________
+Jawaban:
+Tabel dan grafik memiliki fungsi yang saling melengkapi dalam sebuah laporan ilmiah dan tidak bisa saling menggantikan. Tabel sangat diperlukan ketika pembaca membutuhkan ketepatan data secara presisi hingga angka desimal (seperti nilai rata-rata akurat dan standar deviasi), sedangkan grafik sangat unggul dalam memperlihatkan tren visual, pola distribusi, dan perbandingan antar kelompok secara cepat dalam sekali lihat. Jika hanya menggunakan salah satu, kita akan kehilangan salah satu dari akurasi detail angka atau kemudahan pemahaman pola data.
+
+Saya pribadi belum pernah membuat grafik yang menyesatkan dalam skala riset formal, namun hal ini sangat mudah terjadi secara tidak sengaja apabila kita menggunakan pengaturan otomatis (default) dari software spreadsheet seperti Excel. Terkadang, software otomatis memotong batas bawah sumbu Y (truncated axis) menyesuaikan rentang data agar grafik terlihat penuh, padahal hal tersebut justru mendistorsi perbedaan data yang sebenarnya di mata pembaca.
