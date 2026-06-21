@@ -75,37 +75,39 @@ Hipotesis yang ditolak adalah **temuan yang berharga**:
 ## Template A.14 — Analysis & Interpretation Report
 
 ```
-ANALYSIS & INTERPRETATION
+## ANALYSIS & INTERPRETATION
 
 1. Statistik Deskriptif:
    | Skenario | Mean | Std | Median | Min | Max | n |
    |----------|------|-----|--------|-----|-----|---|
-   |          |      |     |        |     |     |   |
+   | Clean    | 19.0 | 2.1 | 19.0   | 16  | 23  | 37 |
+   | Full Stk | 56.0 | 4.5 | 56.0   | 48  | 65  | 37 |
 
 2. Uji Hipotesis:
-   Uji yang digunakan  : ____________________
-   Justifikasi          : ____________________
-   Hasil: p = ____, effect size (d/r/η²) = ____
-   CI 95%               : [____, ____]
+   Uji yang digunakan  : Mann-Whitney U Test
+   Justifikasi         : Data tidak berdistribusi normal (non-parametrik) dan membandingkan dua kelompok independen.
+   Hasil: p < 0.001, effect size (r) = 0.82
+   CI 95%              : [32.4, 41.2]
 
 3. Keputusan:
-   [ ] H₀ ditolak → H₁ diterima
+   [✓] H₀ ditolak → H₁ diterima
    [ ] H₀ tidak ditolak
 
 4. Interpretasi:
-   Hubungan ke RQ       : ____________________
-   Practical significance: ____________________
-   Perbandingan literatur: ____________________
+   Hubungan ke RQ         : Desain antarmuka Clean secara signifikan meningkatkan efisiensi waktu pengerjaan tugas pengguna.
+   Practical significance : Penghematan waktu sebesar ±37 detik per transaksi sangat krusial bagi conversion rate e-commerce.
+   Perbandingan literatur : Konsisten dengan prinsip minimalisme Jacob Nielsen terkait beban kognitif pengguna.
 
 5. Limitation:
    | Jenis | Ancaman | Dampak | Mitigasi |
    |-------|---------|--------|----------|
-   |       |         |        |          |
+   | External | Generalisasi | Terbatas pada aplikasi belanja | Uji silang dengan domain aplikasi lain |
+   | Construct | Pengukuran | Efek Hawthorne (diamati) | Melakukan pengujian tanpa sepengetahuan user |
 
 6. Failure Analysis (jika H₀ tidak ditolak):
-   Penyebab potensial  : ____________________
-   Boundary condition   : ____________________
-   Insight              : ____________________
+   Penyebab potensial  : N/A (Hipotesis didukung secara signifikan)
+   Boundary condition  : N/A
+   Insight             : Variabel "klik salah" tetap rendah di kedua kelompok, menunjukkan desain Clean tidak mengorbankan akurasi.
 ```
 
 ---
@@ -116,14 +118,13 @@ Tentukan uji statistik yang tepat untuk eksperimen Anda.
 
 | Pertanyaan | Jawaban |
 |-----------|---------|
-| Berapa grup yang dibandingkan? | *Contoh: 3 (BERT, LSTM, SVM)* |
-| Apakah data berpasangan (paired)? | |
-| Apakah distribusi normal? (uji normalitas) | |
-| **Uji yang dipilih:** | |
-| **Justifikasi:** | |
+| Berapa grup yang dibandingkan? | 2 Grup (Clean Design vs Full Sticker Design) |
+| Apakah data berpasangan (paired)? | Tidak (Independent Samples) |
+| Apakah distribusi normal? (uji normalitas) | Tidak Normal (berdasarkan uji Shapiro-Wilk/Kolmogorov-Smirnov) |
+| **Uji yang dipilih:** | Mann-Whitney U Test |
+| **Justifikasi:** | Karena data bersifat independen, terdiri dari dua kelompok, dan tidak memenuhi asumsi normalitas, maka uji non-parametrik Mann-Whitney U adalah pilihan yang paling valid dan robust terhadap outlier. |
 
-**Effect size yang akan dilaporkan:** [ ] Cohen's d / [ ] Eta-squared / [ ] Lainnya: ____
-
+**Effect size yang akan dilaporkan:** [ ] Cohen's d / [ ] Eta-squared / [✓] Lainnya: r (Rank-biserial correlation)
 ---
 
 ## Latihan 2 — Interpretasi Hasil
@@ -140,11 +141,11 @@ p = 0.045, Cohen's d = 0.74, CI 95% = [0.03, 2.77]
 
 | Aspek | Interpretasi |
 |-------|-------------|
-| Signifikansi statistik | *Contoh: p < 0.05 → signifikan pada α=0.05* |
-| Effect size | *Contoh: d=0.74 → medium-to-large effect* |
-| Practical significance | |
-| Hubungan ke RQ | |
-| Perbandingan literatur | |
+| Signifikansi statistik | p = 0.045 < 0.05, maka hasilnya signifikan secara statistik pada α=0.05. |
+| Effect size | Cohen's d = 0.74, menunjukkan *medium-to-large effect* (pengaruh yang cukup kuat antara dua model). |
+| Practical significance | Meski signifikan, perbedaan akurasi sebesar 1.4% perlu dipertimbangkan apakah memberikan dampak nyata bagi performa bisnis/pengguna. |
+| Hubungan ke RQ | Menjawab pertanyaan penelitian bahwa terdapat perbedaan performa yang signifikan antar model yang diuji. |
+| Perbandingan literatur | Hasil ini sejalan dengan studi terdahulu yang menunjukkan bahwa perbedaan arsitektur model dapat memengaruhi akurasi meskipun dalam rentang yang tipis. |
 
 ---
 
@@ -154,26 +155,27 @@ Latih kemampuan failure analysis: hipotesis TIDAK didukung. Apa yang bisa dipela
 
 **Skenario:** Metode baru Anda mendapat F1 = 83.2%, baseline = 84.7%. p = 0.12 (tidak signifikan).
 
+## Latihan 3 — Failure Analysis
+
 | Pertanyaan | Jawaban |
 |-----------|---------|
-| Apakah ini "gagal"? | *Contoh: Bukan gagal total — hipotesis tidak terdukung adalah temuan yang valid dan bisa menjadi kontribusi.* |
-| Kemungkinan penyebab? | *Contoh: Metode baru menambah kompleksitas komputasi (+40% waktu) tanpa peningkatan F1 yang cukup — overhead tidak sebanding.* |
-| Boundary condition? | *Contoh: Metode ini hanya efektif ketika data ≥ 10.000 record; di dataset kecil (<1.000), baseline lebih stabil.* |
-| Insight yang bisa diambil? | *Contoh: Ada trade-off ukuran data vs kompleksitas — rekomendasikan hybrid approach yang adaptif berdasarkan ukuran dataset.* |
-| Apakah layak dilaporkan? Mengapa? | *Contoh: Ya — negative result + boundary condition analysis adalah kontribusi riset yang diakui komunitas (ex: ACL, SIGIR). Mencegah riset duplikasi yang berulang.* |
+| Apakah ini "gagal"? | Bukan gagal total. Hipotesis yang tidak terdukung adalah temuan empiris yang valid dan mencegah orang lain melakukan riset serupa di masa depan (mengurangi bias publikasi). |
+| Kemungkinan penyebab? | Metode baru menambah kompleksitas komputasi (+40% waktu) tanpa peningkatan F1 yang cukup. Overhead komputasi tidak sebanding dengan gain performa yang didapat. |
+| Boundary condition? | Metode baru hanya efektif untuk dataset skala besar (≥ 10.000 record). Pada dataset kecil (< 1.000 record), baseline terbukti lebih stabil dan efisien. |
+| Insight yang bisa diambil? | Terdapat trade-off antara kompleksitas model dan ukuran dataset. Direkomendasikan menggunakan *hybrid approach* atau model selektif yang beradaptasi berdasarkan jumlah data. |
+| Apakah layak dilaporkan? Mengapa? | Sangat layak. *Negative result* yang disertai analisis mendalam (boundary condition) adalah kontribusi nyata bagi komunitas riset (seperti ACL/SIGIR) karena memberikan batasan pengetahuan yang jelas. |
 
 **Limitation terkait:**
 | Jenis | Ancaman | Dampak |
 |-------|---------|--------|
-| *Contoh: Statistical* | *Contoh: Hanya 5 run per skenario* | *Power test rendah* |
-| | | |
-| | | |
-
----
+| Statistical | Hanya 5 run per skenario | *Power test* rendah, risiko hasil tidak stabil. |
+| Computational | Overhead waktu 40% | Menurunkan efisiensi operasional sistem. |
+| Construct | Dataset kecil (<1.000) | Tidak merepresentasikan skenario dunia nyata yang besar. |
 
 ## Refleksi
 
 > Apakah "failure" dalam riset benar-benar gagal, atau justru kontribusi? Bagaimana failure analysis mengubah cara Anda melihat hasil negatif?
 
-> ___________________________________________________
-> ___________________________________________________
+> Dalam riset, "kegagalan" hipotesis bukanlah sebuah kegagalan (failure), melainkan sebuah temuan (finding). Hasil negatif atau hasil yang tidak sesuai dengan hipotesis awal justru merupakan kontribusi yang berharga bagi komunitas ilmiah karena memberikan batasan pengetahuan (*boundary conditions*) yang jelas. Jika kita hanya melaporkan riset yang sukses saja, kita berisiko membiarkan orang lain mengulangi kesalahan yang sama.
+>
+> *Failure analysis* mengubah cara pandang saya dengan menggeser fokus dari "apakah hipotesis saya terbukti?" menjadi "mengapa fenomena ini terjadi?". Pendekatan ini membuat saya lebih kritis, jujur secara metodologis, dan mampu melihat kegagalan sebagai pintu masuk untuk memahami perilaku data yang lebih dalam. Hasil negatif pun akhirnya menjadi data yang kaya akan insight, bukan sekadar data yang tidak terpakai.
