@@ -1,0 +1,13 @@
+# 01-Abstrak
+
+## Abstrak (Bahasa Indonesia)
+Penelitian ini bertujuan untuk mengukur secara objektif dampak kepadatan elemen visual (*visual clutter*) pada antarmuka *Live Streaming* TikTok Shop terhadap efisiensi transaksi pengguna Generasi Z. Meskipun adopsi *social commerce* berkembang pesat, desain antarmuka saat ini memiliki kepadatan informasi yang tinggi akibat penumpukan komponen dinamis. Penelitian ini menggunakan metode eksperimen terkontrol dengan subjek berpasangan (*within-subject*) terhadap 37 responden. Variabel yang diukur adalah *Time-on-Task* (durasi transaksi) pada dua kondisi antarmuka: kondisi *Clean* sebagai baseline dan kondisi *Full* sebagai perlakuan. Hasil analisis menggunakan uji *Mann-Whitney* menunjukkan adanya perbedaan signifikan secara statistik ($p < 0,001$) dengan *Mean Rank* pada kondisi *Clean* sebesar 19.00, jauh lebih efisien dibandingkan 56.00 pada kondisi *Full*. Temuan ini mengonfirmasi bahwa kepadatan elemen visual secara signifikan menghambat efisiensi interaksi pengguna, sehingga desain antarmuka perlu dioptimalkan untuk menjaga efisiensi transaksi tanpa mengurangi fungsi dinamis platform.
+
+**Kata Kunci**: *Live Streaming TikTok Shop*, *Visual Clutter*, *Time-on-Task*, TikTok Shop, *Generasi Z *.
+
+---
+
+## Abstract (English)
+This study aims to objectively measure the impact of visual clutter on the TikTok Shop *Live Streaming* interface on the transaction efficiency of Generation Z users. Despite the rapid adoption of *social commerce*, current interface designs suffer from high information density due to the accumulation of dynamic components. This research employs a controlled experiment with a within-subject design involving 37 respondents. The measured variable is *Time-on-Task* (transaction duration) under two interface conditions: *Clean* (baseline) and *Full* (treatment). Analysis using the *Mann-Whitney* test reveals a statistically significant difference (p < 0.001), with a *Mean Rank* of 19.00 for the *Clean* condition, which is significantly more efficient than the 56.00 observed in the *Full* condition. These findings confirm that visual clutter significantly hinders user interaction efficiency, suggesting that interface designs should be optimized to maintain transaction efficiency without compromising the platform's dynamic functionalities.
+
+**Keywords**: *Live Streaming TikTok Shop*, *Visual Clutter*, *Time-on-Task*, TikTok Shop, *Generation Z*.

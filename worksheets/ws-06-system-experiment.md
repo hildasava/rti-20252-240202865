@@ -43,6 +43,19 @@ Jika variabel tidak bisa di-map ke komponen apapun → arsitektur perlu didesain
 - **Configuration-driven** — Ubah config (YAML/JSON), bukan code
 - **Feature toggles** — On/off flag untuk ablation study
 
+  Contoh config YAML dengan feature toggles:
+  ```yaml
+  model:
+    type: cnn          # IV: ganti "rf" untuk kondisi baseline
+  features:
+    use_temporal: true  # toggle komponen temporal
+    use_normalization: true  # toggle preprocessing
+  experiment:
+    seed: 42
+    runs: 5
+  ```
+  Dengan pendekatan ini, berbeda kondisi eksperimen = berbeda satu baris config, **tanpa mengubah kode**.
+
 ### Research vs Engineering
 
 | Aspek | Engineering | Research |
@@ -125,7 +138,14 @@ Menggunakan simulasi rekaman layar *Live Streaming* yang sudah diatur tingkat ke
 
 Jika sistem memiliki 3 komponen utama, rencanakan ablation study.
 
+<<<<<<< HEAD
 | Kondisi | Komponen A (Overlay Stiker/Gift) | Komponen B (Komentar Real-time) | Komponen C (Banner Promo) | Hasil yang Diharapkan |
+=======
+> **Panduan jumlah kondisi:** Untuk 3 komponen (A, B, C), kondisi minimal yang direkomendasikan:
+> Full + (-A) + (-B) + (-C) = **4 kondisi dasar**. Jika waktu memungkinkan, tambahkan kombinasi ganda: (-A,-B), (-A,-C), (-B,-C) = **7 kondisi**. Sesuaikan dengan *computational cost* dan tenggat waktu penelitian.
+
+| Kondisi | Komponen A | Komponen B | Komponen C | Hasil yang Diharapkan |
+>>>>>>> ffac99b58491f20c5b78603a2b315eb77ca446fd
 |---------|-----------|-----------|-----------|----------------------|
 | **Full** | ✅ Aktif | ✅ Aktif | ✅ Aktif | *Baseline*: Efisiensi terendah (Waktu terlama & jumlah tap terbanyak). |
 | **– A** | ❌ Dinonaktifkan | ✅ Aktif | ✅ Aktif | Kecepatan transaksi meningkat karena area tombol "Beli" tidak tertutup. |
